@@ -1,0 +1,19 @@
+php artisan tinker
+DB::table('persons')->insert([
+    ['name' => 'Raj', 'email' => 'raj@test.com', 'created_at' => now(), 'updated_at' => now()],
+    ['name' => 'John', 'email' => 'john@test.com', 'created_at' => now(), 'updated_at' => now()],
+    ['name' => 'Sarah', 'email' => 'sarah@test.com', 'created_at' => now(), 'updated_at' => now()],
+]);
+
+DB::table('posts')->insert([
+    ['person_id' => 1, 'title' => 'Laravel Tips', 'content' => 'Best practices for Laravel', 'created_at' => now(), 'updated_at' => now()],
+    ['person_id' => 1, 'title' => 'PHP Guide', 'content' => 'Advanced PHP concepts', 'created_at' => now(), 'updated_at' => now()],
+    ['person_id' => 2, 'title' => 'Vue.js', 'content' => 'Frontend framework guide', 'created_at' => now(), 'updated_at' => now()],
+]);
+
+DB::table('comments')->insert([
+    ['post_id' => 1, 'person_id' => 2, 'body' => 'Great post!', 'created_at' => now(), 'updated_at' => now()],
+    ['post_id' => 1, 'person_id' => 3, 'body' => 'Very helpful', 'created_at' => now(), 'updated_at' => now()],
+    ['post_id' => 2, 'person_id' => 2, 'body' => 'Thanks for sharing', 'created_at' => now(), 'updated_at' => now()],
+]);
+
